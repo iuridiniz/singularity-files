@@ -1,0 +1,6 @@
+Bootstrap: docker
+From: ankane/pghero
+
+%runscript
+    cd /app
+    puma -C config/puma.rb

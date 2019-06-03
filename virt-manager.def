@@ -1,0 +1,12 @@
+Bootstrap: docker
+From: debian:unstable-slim
+
+%post
+    apt-get -y update
+    apt-get -y install --no-install-recommends virt-manager virt-viewer gir1.2-spiceclientgtk-3.0
+
+#environment
+    export LC_ALL=C
+
+%runscript
+    exec /usr/bin/virt-manager "$@"
